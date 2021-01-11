@@ -11,4 +11,4 @@ const styles = StyleSheet.create({
 
 });
 
-return ShowResult;
+export default ShowResult;

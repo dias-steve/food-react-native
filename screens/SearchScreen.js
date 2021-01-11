@@ -20,6 +20,8 @@ const SearchScreen = () => {
         {errorMessage ? <Text>{errorMessage}</Text>:null}
         <Text> We have found {results.length} results</Text>
         <ShowResults title = "Cost Efficient"/>
+        <ShowResults title = "Bit Pricer"/>
+        <ShowResults title = "Big Spender!"/>
 
     </View>;
 }

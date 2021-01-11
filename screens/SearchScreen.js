@@ -8,7 +8,13 @@ const INITIALSEARCH = "Asian food"
 const SearchScreen = () => {
     const [term, setTerm] = useState();
     const [results, errorMessage, searchAPI] = useResult(INITIALSEARCH);
-    console.log(results)
+
+    console.log(results);
+    const resultsByPrice = (price) => {
+        return results.filter(result => {
+            return result.price === price;
+        });
+    };
 
     return <View style = {styles.View }>
         <SearchBar 
@@ -19,9 +25,9 @@ const SearchScreen = () => {
             />
         {errorMessage ? <Text>{errorMessage}</Text>:null}
         <Text> We have found {results.length} results</Text>
-        <ShowResults title = "Cost Efficient"/>
-        <ShowResults title = "Bit Pricer"/>
-        <ShowResults title = "Big Spender!"/>
+        <ShowResults  results = {resultsByPrice('$')} title = "Cost Efficient"/>
+        <ShowResults results = {resultsByPrice('$$')} title = "Bit Pricer"/>
+        <ShowResults results = {resultsByPrice('$$$')} title = "Big Spender!"/>
 
     </View>;
 }

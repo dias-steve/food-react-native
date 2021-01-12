@@ -6,7 +6,6 @@ const ShowResult = ({title, results}) => {
 
     return <View>
         <Text style = {styles.titleStyle}> {title} </Text>
-        <Text> {results.length}</Text>
         <FlatList
             horizontal
             keyExtractor = {results => results.id}

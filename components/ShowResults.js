@@ -20,7 +20,9 @@ const ShowResult = ({title, results}) => {
 
 const styles = StyleSheet.create({
     container: {
-        marginBottom: 15
+        marginBottom: 15,
+   
+
     },
     titleStyle: {
         fontSize: 20,

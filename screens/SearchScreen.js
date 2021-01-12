@@ -15,7 +15,7 @@ const SearchScreen = () => {
             return result.price === price;
         });
     };
-
+    //<>
     return <View style = {styles.View }>
         <SearchBar 
             term = {term}
@@ -24,20 +24,31 @@ const SearchScreen = () => {
             initialSearch= {INITIALSEARCH}
             />
         {errorMessage ? <Text>{errorMessage}</Text>:null}
-        <Text> We have found {results.length} results</Text>
+        
         <ScrollView>
         <ShowResults  results = {resultsByPrice('$')} title = "Cost Efficient"/>
+        <View style= {styles.lineStyle}/>
         <ShowResults results = {resultsByPrice('$$')} title = "Bit Pricer"/>
+        <View style= {styles.lineStyle}/>
         <ShowResults results = {resultsByPrice('$$$')} title = "Big Spender!"/>
         </ScrollView>
     </View>;
+    //</> Pour éviter d'utiliser </View> 
 }
 
 const styles = StyleSheet.create({
     View: {
         backgroundColor: "white",
-        ...StyleSheet.absoluteFillObject
+        flex : 1,
+       
         
+    },
+    lineStyle: {
+        borderBottomColor: '#F0EEEE',
+        borderWidth: 0.5,
+        marginLeft: 16,
+        marginBottom: 6
+    
     }
 });
 

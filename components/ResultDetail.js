@@ -2,7 +2,7 @@ import React from 'react';
 import {Text, View, StyleSheet, Image} from 'react-native';
 
 const ResultDetail =({result}) =>{
-    return <View> 
+    return <View style = {styles.container}> 
         <Image 
             source={{uri: result.image_url}}
             style = {styles.imageStyle}
@@ -13,10 +13,14 @@ const ResultDetail =({result}) =>{
 };
 
 const styles = StyleSheet.create({
+    container: {
+        marginLeft: 15
+    },
     imageStyle: {
         width: 250,
         height: 120,
-        borderRadius: 5
+        borderRadius: 5,
+        marginBottom: 5
 
     },
     name:{

@@ -6,7 +6,7 @@ import ShowResults from '../components/ShowResults'
 const INITIALSEARCH = "Asian food"
 const LOCATION = "NEW YORK"
 
-const SearchScreen = ({navigation}) => {
+const SearchScreen = () => {
     const [term, setTerm] = useState();
     const [results, errorMessage, searchAPI] = useResult(INITIALSEARCH,LOCATION);
 
@@ -30,19 +30,19 @@ const SearchScreen = ({navigation}) => {
         <ShowResults  
             results = {resultsByPrice('$')} 
             title = "Cost Efficient"
-            navigator = {navigation}
+          
             />
         <View style= {styles.lineStyle}/>
         <ShowResults 
             results = {resultsByPrice('$$')} 
             title = "Bit Pricer"
-            navigator = {navigation}
+            
             />
         <View style= {styles.lineStyle}/>
         <ShowResults 
             results = {resultsByPrice('$$$')} 
             title = "Big Spender!"
-            navigator = {navigation}
+           
             />
         </ScrollView>
     </View>;

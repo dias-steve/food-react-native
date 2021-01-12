@@ -6,7 +6,7 @@ import ShowResults from '../components/ShowResults'
 const INITIALSEARCH = "Asian food"
 const LOCATION = "NEW YORK"
 
-const SearchScreen = () => {
+const SearchScreen = ({navigation}) => {
     const [term, setTerm] = useState();
     const [results, errorMessage, searchAPI] = useResult(INITIALSEARCH,LOCATION);
 
@@ -27,11 +27,23 @@ const SearchScreen = () => {
         {errorMessage ? <Text>{errorMessage}</Text>:null}
         
         <ScrollView>
-        <ShowResults  results = {resultsByPrice('$')} title = "Cost Efficient"/>
+        <ShowResults  
+            results = {resultsByPrice('$')} 
+            title = "Cost Efficient"
+            navigator = {navigation}
+            />
         <View style= {styles.lineStyle}/>
-        <ShowResults results = {resultsByPrice('$$')} title = "Bit Pricer"/>
+        <ShowResults 
+            results = {resultsByPrice('$$')} 
+            title = "Bit Pricer"
+            navigator = {navigation}
+            />
         <View style= {styles.lineStyle}/>
-        <ShowResults results = {resultsByPrice('$$$')} title = "Big Spender!"/>
+        <ShowResults 
+            results = {resultsByPrice('$$$')} 
+            title = "Big Spender!"
+            navigator = {navigation}
+            />
         </ScrollView>
     </View>;
     //</> Pour éviter d'utiliser </View> 

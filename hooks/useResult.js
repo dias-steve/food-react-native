@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import yelp from '../api/yelp';
 
 
-export default (initialSearch) => {
+export default (initialSearch, location) => {
     const [results, setResults] = useState([]);
     const [errorMessage,setErrorMessage] = useState('');
 
@@ -13,7 +13,7 @@ export default (initialSearch) => {
                 params: {
                     limit: 50,
                     term : searchTerm,
-                    location:'san jose'
+                    location:{location}
                 }
             });
             console.log(response);

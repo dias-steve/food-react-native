@@ -4,10 +4,11 @@ import SearchBar from '../components/SearchBar';
 import useResult from '../hooks/useResult';
 import ShowResults from '../components/ShowResults'
 const INITIALSEARCH = "Asian food"
+const LOCATION = "NEW YORK"
 
 const SearchScreen = () => {
     const [term, setTerm] = useState();
-    const [results, errorMessage, searchAPI] = useResult(INITIALSEARCH);
+    const [results, errorMessage, searchAPI] = useResult(INITIALSEARCH,LOCATION);
 
     console.log(results);
     const resultsByPrice = (price) => {
@@ -15,7 +16,7 @@ const SearchScreen = () => {
             return result.price === price;
         });
     };
-    //<>
+    //<>paspoas
     return <View style = {styles.View }>
         <SearchBar 
             term = {term}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, StyleSheet } from 'react-native'; 
+import { Text, View, StyleSheet} from 'react-native'; 
 import { TextInput } from 'react-native-gesture-handler';
 import{Feather} from '@expo/vector-icons';
 
@@ -26,7 +26,8 @@ const styles = StyleSheet.create({
         height: 50,
         marginHorizontal: 15,
         flexDirection: 'row',
-        marginTop: 10
+        marginTop: 10,
+        marginBottom: 15
     }, 
     textInputStyle: {
         

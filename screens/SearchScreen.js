@@ -23,7 +23,9 @@ const SearchScreen = () => {
             onTermChange= {setTerm}
             onTermSubmit = {() => {searchAPI(term)}}
             initialSearch= {INITIALSEARCH}
+            ok = {5}
             />
+           
         {errorMessage ? <Text>{errorMessage}</Text>:null}
         
         <ScrollView>
